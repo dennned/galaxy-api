@@ -5,10 +5,19 @@ namespace App\Entity;
 use ApiPlatform\Core\Annotation\ApiResource;
 use App\Repository\GalaxiesRepository;
 use Doctrine\ORM\Mapping as ORM;
-use Symfony\Component\Validator\Constraints\Date;
 
 /**
- * @ApiResource()
+ * @ApiResource(
+ *     collectionOperations={
+ *      "get"={},
+ *      "post"={}
+ *     },
+ *     itemOperations={
+ *      "get"={},
+ *      "put"={},
+ *      "delete"={}
+ *     }
+ * )
  * @ORM\Entity(repositoryClass=GalaxiesRepository::class)
  */
 class Galaxies
