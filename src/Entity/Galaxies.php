@@ -5,17 +5,29 @@ namespace App\Entity;
 use ApiPlatform\Core\Annotation\ApiResource;
 use App\Repository\GalaxiesRepository;
 use Doctrine\ORM\Mapping as ORM;
+use App\Controller\Api\GalaxySelected;
+use App\Controller\Api\GalaxyLast;
 
 /**
  * @ApiResource(
  *     collectionOperations={
  *      "get"={},
- *      "post"={}
+ *      "post"={},
+ *      "last_galaxy"={
+ *          "method"="GET",
+ *          "path"="/galaxy/last",
+ *          "controller"=GalaxyLast::class
+ *      }
  *     },
  *     itemOperations={
  *      "get"={},
  *      "put"={},
- *      "delete"={}
+ *      "delete"={},
+ *      "selected_galaxy"={
+ *          "method"="GET",
+ *          "path"="/galaxy/{id}/last",
+ *          "controller"=GalaxySelected::class
+ *      }
  *     }
  * )
  * @ORM\Entity(repositoryClass=GalaxiesRepository::class)
