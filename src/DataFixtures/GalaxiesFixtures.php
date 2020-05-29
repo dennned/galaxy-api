@@ -30,7 +30,7 @@ class GalaxiesFixtures extends Fixture
             $galaxyItem->setName($galaxy['name']);
             $galaxyItem->setDescription($galaxy['desc']);
             $manager->persist($galaxyItem);
-            $manager->flush();
         }
+        $manager->flush();
     }
 }
