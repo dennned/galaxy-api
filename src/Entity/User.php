@@ -84,13 +84,16 @@ class User implements UserInterface
 
         return $this;
     }
+    /**
+     * Returns the roles granted to the user.
+     */
+    public function getRoles()
+    {
+        return ['ROLE_USER'];
+    }
     public function eraseCredentials()
     {
         // TODO: Implement eraseCredentials() method.
-    }
-    public function getRoles()
-    {
-        // TODO: Implement getRoles() method.
     }
     public function getSalt()
     {
